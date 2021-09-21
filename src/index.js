@@ -1,7 +1,7 @@
 const { Client, Intents } = require('discord.js');
 const Discord = require('discord.js')
 const AXIOS = require('axios');
-const CLIENT = new Client({ intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES, Intents.FLAGS.GUILD_MEMBERS] });
+const CLIENT = new Client({ intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES] });
 const CONFIG = require('./config.json');
 const HTTP_CONFIG = {
     headers: {
