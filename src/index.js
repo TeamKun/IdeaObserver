@@ -14,9 +14,9 @@ CLIENT.on('ready', () => {
 
     CLIENT.api.applications(CLIENT.user.id).commands.post({
         data: {
-            name: "leave",
+            name: "observ",
             description: "指定期間中に活動していないユーザーを取得できます",
-            content: "Leave",
+            content: "Observ",
             options: [{
                 name: "day",
                 description: "期間(n日)",
