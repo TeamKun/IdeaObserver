@@ -52,6 +52,9 @@ CLIENT.ws.on('INTERACTION_CREATE', async interaction => {
 })
 
 CLIENT.on('messageCreate', async(msg) => {
+    if (!isTargetChannel(msg.channelId)) {
+        return;
+    }
     // 投稿をinsert
     insertPost(msg);
 })
@@ -127,19 +130,18 @@ async function leaveCommand(channel, day) {
     let apiResults = await AXIOS.get(CONFIG.apiGetUrl, {
         params: {
             'token': CONFIG.apiToken,
+            'type': 'bot',
             'day': day
         }
     })
 
-    let leaveList = apiResults.data.leaveList;
+    console.log(apiResults.data)
+
     let resultMessage = ``
-    resultMessage += `アクティブ割合: ${apiResults.data.allCount - leaveList.length} / ${apiResults.data.allCount}\n`
-    resultMessage += '非アクティブリスト:\n'
-    resultMessage += '```\n'
-    for (r of leaveList) {
-        resultMessage += `${r.currentName}\n`
-    }
-    resultMessage += '```'
+    resultMessage += `非アクティブ人数: ${apiResults.data.countOfLeaveUser}人\n`
+    resultMessage += `アクティブ割合: ${apiResults.data.countOfAllUser - apiResults.data.countOfLeaveUser} / ${apiResults.data.countOfAllUser}\n`
+    resultMessage += '詳細:\n'
+    resultMessage += `${CONFIG.apiGetUrl}?type=page&day=${day}`
     channel.send(resultMessage)
 
     return { ok: true }

@@ -1,7 +1,7 @@
 {
-    "token": "",
-    "apiPostUrl": "",
-    "apiGetUrl": "",
-    "targetChannels": [],
-    "apiToken": ""
+    "token": "ODgzMjIyNTczNTE5ODg0MzA4.YTGzHw.56TtJgiMSxbsa9FTxcVHBaLDDLk",
+    "apiPostUrl": "https://script.google.com/macros/s/AKfycbzksPyS7BKc5X9qYvj3Vv7cjOt0dbJIXr9ojDPJ3dBYFpExCi-f4hT2lihjNoUGUA0cjA/exec",
+    "apiGetUrl": "https://script.google.com/macros/s/AKfycbw1VUvUnlH1KcNLg4Xd13rkUQo1BRksHn_29Ma0YhvRCl96YSHtRgmHc5opRhBXq--5Cg/exec",
+    "targetChannels": ["888047295399084102", "888047358221373481", "888047427536437268", "888047471928934400"],
+    "apiToken": "4760d330347d840cf4342de1f4c6f39d87787a4a330e7b1f8edf8d35533c7353"
 }
